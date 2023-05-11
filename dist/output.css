@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+section.home {
+  background: #0f0f0f;
+  height: 100%;
+}
+section.home .content {
+  padding: 0 16px;
+  position: relative;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background: #0f0f0f;
+}
+section.home .content .container {
+  display: flex;
+  flex-direction: column;
+}
+section.home .content .container .info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.0823529412);
+  padding: 3px 24px;
+  border-radius: 4px 4px 0 0;
+}
+section.home .content .container .info h1 {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+section.home .content .container .info span {
+  color: #e7e7e7;
+  font-weight: 600;
+  font-size: 16px;
+  justify-content: flex-end;
+  display: flex;
+  width: -webkit-fill-available;
+}
+section.home .content .container .list {
+  display: flex;
+  gap: 32px;
+  background: #171d23;
+  padding: 32px 24px;
+  border-radius: 0 0 4px 4px;
+  overflow-x: auto;
+}
+section.home .content .container .list .box {
+  height: 156px;
+  min-width: 256px;
+  background: #13181c;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s linear;
+}
+section.home .content .container .list .box:hover {
+  transform: scale(1.05);
+}
+
+section.property {
+  background: #0f0f0f;
+  height: 100%;
+}
+section.property .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+}
+section.property .content .heading {
+  margin-top: 16px;
+}
+section.property .content .heading h1 {
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+section.property .content .preview {
+  background: #171d23;
+  border-radius: 4px;
+  width: 456px;
+  height: 156px;
+  padding: 8px;
+  display: flex;
+}
+section.property .content .preview #prop {
+  height: 64px;
+  width: 64px;
+  background: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.property .content .buttons {
+  width: 456px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+section.property .content .buttons button {
+  width: 100%;
+  height: 42px;
+  border-radius: 4px 4px 0 0;
+  color: #0f0f0f;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s linear;
+}
+section.property .content .buttons button::before {
+  position: absolute;
+  height: 6px;
+  bottom: -6px;
+  border-radius: 0 0 4px 4px;
+  left: 0;
+  width: 100%;
+  content: "";
+  background: #e3e3e3;
+  transition: 0.3s linear;
+}
+section.property .content .buttons button:focus {
+  background: #1dabad;
+  color: #fff;
+}
+section.property .content .buttons button:focus::before {
+  background: #159496;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #1dabad;
+}
+
+/*# sourceMappingURL=output.css.map */
