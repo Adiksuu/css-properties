@@ -170,6 +170,38 @@ window.setTimeout(() => {
             btn4: "overline",
             btn5: "unset",
         },
+        {
+            name: "cursor",
+            btn1: "default",
+            btn2: "none",
+            btn3: "zoom-in",
+            btn4: "crosshair",
+            btn5: "grab",
+        },
+        {
+            name: "height",
+            btn1: "64px",
+            btn2: "16px",
+            btn3: "32px",
+            btn4: "50%",
+            btn5: "100%",
+        },
+        {
+            name: "width",
+            btn1: "64px",
+            btn2: "16px",
+            btn3: "32px",
+            btn4: "50%",
+            btn5: "100%",
+        },
+        {
+            name: "background",
+            btn1: "#fff",
+            btn2: "#0f0f0f",
+            btn3: "skyblue",
+            btn4: "pink",
+            btn5: "rgba(255, 0, 0)",
+        },
     ];
     if (id >= sets.length) {
         toSite("");
@@ -315,6 +347,34 @@ window.setTimeout(() => {
         for (let i = 0; i < properties.length; i++) {
             properties[i].addEventListener("click", () => {
                 prop.style.textDecoration = properties[i].textContent;
+            });
+        }
+    }
+    else if (id == 18) {
+        for (let i = 0; i < properties.length; i++) {
+            properties[i].addEventListener("click", () => {
+                prop.style.cursor = properties[i].textContent;
+            });
+        }
+    }
+    else if (id == 19) {
+        for (let i = 0; i < properties.length; i++) {
+            properties[i].addEventListener("click", () => {
+                prop.style.height = properties[i].textContent;
+            });
+        }
+    }
+    else if (id == 20) {
+        for (let i = 0; i < properties.length; i++) {
+            properties[i].addEventListener("click", () => {
+                prop.style.width = properties[i].textContent;
+            });
+        }
+    }
+    else if (id == 21) {
+        for (let i = 0; i < properties.length; i++) {
+            properties[i].addEventListener("click", () => {
+                prop.style.background = properties[i].textContent;
             });
         }
     }

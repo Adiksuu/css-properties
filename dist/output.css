@@ -73,10 +73,12 @@ section.home .content .container .list .box {
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
+  border-bottom: 4px solid transparent;
   transition: 0.3s linear;
 }
 section.home .content .container .list .box:hover {
   transform: scale(1.05);
+  border-bottom: 4px solid #1dabad;
 }
 
 section.property {

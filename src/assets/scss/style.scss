@@ -74,9 +74,11 @@ section.home {
                     color: $color-white;
                     font-weight: 500;
                     text-transform: uppercase;
+                    border-bottom: 4px solid transparent;
                     transition: 0.3s linear;
                     &:hover {
                         transform: scale(1.05);
+                        border-bottom: 4px solid $color-main;
                     }
                 }
             }
@@ -172,8 +174,23 @@ section.property {
     background-color: $color-main;
 }
 
-
-@media screen and (max-width: 796px){
+@media screen and (max-width: 796px) {
+    section.home {
+        .content {
+            padding: 4px;
+            .container {
+                .info {
+                    padding: 8px;
+                    h1 {
+                        font-size: 16px;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
     section.property {
         .content {
             .preview {
