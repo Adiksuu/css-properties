@@ -167,4 +167,20 @@ section.property .content .buttons button:focus::before {
   background-color: #1dabad;
 }
 
+@media screen and (max-width: 796px) {
+  section.property .content .preview {
+    width: calc(100% - 32px);
+  }
+  section.property .content .buttons {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    width: 100%;
+  }
+  section.property .content .buttons button {
+    width: calc(100% - 32px);
+  }
+}
+
 /*# sourceMappingURL=output.css.map */

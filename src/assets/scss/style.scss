@@ -171,3 +171,24 @@ section.property {
     border-radius: 5px;
     background-color: $color-main;
 }
+
+
+@media screen and (max-width: 796px){
+    section.property {
+        .content {
+            .preview {
+                width: calc(100% - 32px);
+            }
+            .buttons {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                align-items: center;
+                width: 100%;
+                button {
+                    width: calc(100% - 32px);
+                }
+            }
+        }
+    }
+}
