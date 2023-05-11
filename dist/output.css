@@ -168,6 +168,18 @@ section.property .content .buttons button:focus::before {
 }
 
 @media screen and (max-width: 796px) {
+  section.home .content {
+    padding: 4px;
+  }
+  section.home .content .container .info {
+    padding: 8px;
+  }
+  section.home .content .container .info h1 {
+    font-size: 16px;
+  }
+  section.home .content .container .info span {
+    font-size: 12px;
+  }
   section.property .content .preview {
     width: calc(100% - 32px);
   }
