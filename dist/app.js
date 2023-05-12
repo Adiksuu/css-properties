@@ -266,5 +266,21 @@ const sets = [
         btn4: "skew(15deg, 15deg)",
         btn5: "skew(-15deg, -15deg)",
     },
+    {
+        name: "justify-content",
+        btn1: "center",
+        btn2: "flex-start",
+        btn3: "flex-end",
+        btn4: "stretch",
+        btn5: "space-evenly",
+    },
+    {
+        name: "align-items",
+        btn1: "center",
+        btn2: "flex-start",
+        btn3: "flex-end",
+        btn4: "stretch",
+        btn5: "space-evenly",
+    },
 ];
 //# sourceMappingURL=app.js.map
