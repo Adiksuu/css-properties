@@ -75,7 +75,7 @@ window.setTimeout(() => {
             btn5: "32px 0",
         },
         {
-            name: "position relative; top",
+            name: "top",
             btn1: "0",
             btn2: "16px",
             btn3: "-16px",
@@ -83,7 +83,7 @@ window.setTimeout(() => {
             btn5: "-50%",
         },
         {
-            name: "position relative; bottom",
+            name: "bottom",
             btn1: "0",
             btn2: "16px",
             btn3: "-16px",
@@ -91,7 +91,7 @@ window.setTimeout(() => {
             btn5: "-50%",
         },
         {
-            name: "position relative; left",
+            name: "left",
             btn1: "0",
             btn2: "16px",
             btn3: "-16px",
@@ -99,7 +99,7 @@ window.setTimeout(() => {
             btn5: "-50%",
         },
         {
-            name: "position relative; right",
+            name: "right",
             btn1: "0",
             btn2: "16px",
             btn3: "-16px",
@@ -107,20 +107,20 @@ window.setTimeout(() => {
             btn5: "-50%",
         },
         {
-            name: "translate(x)",
-            btn1: "0",
-            btn2: "16px",
-            btn3: "-16px",
-            btn4: "50%",
-            btn5: "-50%",
+            name: "transform",
+            btn1: "translateX(0)",
+            btn2: "translateX(16px)",
+            btn3: "translateX(-16px)",
+            btn4: "translateX(50%)",
+            btn5: "translateX(-50%)",
         },
         {
-            name: "translate(y)",
-            btn1: "0",
-            btn2: "16px",
-            btn3: "-16px",
-            btn4: "50%",
-            btn5: "-50%",
+            name: "transform",
+            btn1: "translateY(0)",
+            btn2: "translateY(16px)",
+            btn3: "translateY(-16px)",
+            btn4: "translateY(50%)",
+            btn5: "translateY(-50%)",
         },
         {
             name: "font-family",
@@ -202,6 +202,14 @@ window.setTimeout(() => {
             btn4: "pink",
             btn5: "rgba(255, 0, 0)",
         },
+        {
+            name: "transition",
+            btn1: ".3s linear",
+            btn2: "3s linear",
+            btn3: ".3s ease-in",
+            btn4: "3s ease-in",
+            btn5: "5s ease",
+        },
     ];
     if (id >= sets.length) {
         toSite("");
@@ -213,170 +221,11 @@ window.setTimeout(() => {
     properties[2].innerHTML = sets[id].btn3;
     properties[3].innerHTML = sets[id].btn4;
     properties[4].innerHTML = sets[id].btn5;
-    if (id == 0) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.borderRadius = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 1) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.border = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 2) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.outline = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 3) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.boxShadow = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 4) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.position = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 5) {
-        prop.style.margin = '0';
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.margin = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 6) {
-        prop.style.position = 'relative';
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.top = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 7) {
-        prop.style.position = 'relative';
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.bottom = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 8) {
-        prop.style.position = 'relative';
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.left = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 9) {
-        prop.style.position = 'relative';
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.right = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 10) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.transform = `translateX(${properties[i].textContent})`;
-            });
-        }
-    }
-    else if (id == 11) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.transform = `translateY(${properties[i].textContent})`;
-            });
-        }
-    }
-    else if (id == 12) {
-        prop.innerHTML = `TEXT`;
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.fontFamily = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 13) {
-        prop.innerHTML = `TEXT`;
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.fontSize = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 14) {
-        prop.innerHTML = `TEXT`;
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.fontWeight = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 15) {
-        prop.innerHTML = `TEXT`;
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.letterSpacing = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 16) {
-        prop.innerHTML = `TEXT`;
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.color = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 17) {
-        prop.innerHTML = `TEXT`;
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.textDecoration = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 18) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.cursor = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 19) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.height = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 20) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.width = properties[i].textContent;
-            });
-        }
-    }
-    else if (id == 21) {
-        for (let i = 0; i < properties.length; i++) {
-            properties[i].addEventListener("click", () => {
-                prop.style.background = properties[i].textContent;
-            });
-        }
+    for (let i = 0; i < properties.length; i++) {
+        properties[i].addEventListener("click", () => {
+            let styleName = sets[id].name;
+            prop.style[styleName] = properties[i].textContent;
+        });
     }
 }, 150);
 function toSite(site) {

@@ -116,6 +116,11 @@ section.property .content .preview #prop {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  transition: 0.3s linear;
+}
+section.property .content .preview #prop:hover {
+  background: #1dabad;
 }
 section.property .content .buttons {
   width: 456px;

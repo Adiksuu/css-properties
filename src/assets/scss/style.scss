@@ -118,6 +118,11 @@ section.property {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                position: relative;
+                transition: .3s linear;
+                &:hover {
+                    background: $color-main;
+                }
             }
         }
         .buttons {
