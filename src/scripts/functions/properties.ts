@@ -8,6 +8,7 @@ function loadPage() {
 
   setProperties()
   setStyles()
+  
 }
 
 window.setTimeout(() => {

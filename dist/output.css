@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+:root {
+  --accent-width: 0%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -176,6 +180,15 @@ section.property .content .code_preview::before {
   content: "";
   border-radius: 0 0 4px 4px;
 }
+section.property .content .code_preview::after {
+  position: absolute;
+  height: 4px;
+  width: var(--accent-width);
+  bottom: -4px;
+  background: #1dabad;
+  content: "";
+  border-radius: 0 0 4px 4px;
+}
 section.property .content .code_preview p {
   font-size: 14px;
   width: calc(100% - 48px);
@@ -228,7 +241,8 @@ section.property .content .code_preview span i {
   section.home .content .container .info span {
     font-size: 12px;
   }
-  section.property .content .preview, section.property .content .code_preview {
+  section.property .content .preview,
+  section.property .content .code_preview {
     width: calc(100% - 32px);
   }
   section.property .content .buttons {
