@@ -161,6 +161,47 @@ section.property {
                 }
             }
         }
+        .code_preview {
+            background: $color-white;
+            width: 456px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            &::before {
+                position: absolute;
+                height: 4px;
+                width: 100%;
+                bottom: -4px;
+                background: #e7e7e7;
+                content: '';
+                border-radius: 0 0 4px 4px;
+            }
+            p {
+                font-size: 14px;
+                width: calc(100% - 48px);
+                float: left;
+                color: $color-black;
+                font-weight: 400;
+                padding-left: 16px;
+            }
+            span {
+                height: 48px;
+                width: 48px;
+                float: right;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #e3e3e3;
+                cursor: pointer;
+                color: $color-black;
+                border-radius: 0 4px 0 0;
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
     }
 }
 
@@ -198,7 +239,7 @@ section.property {
     }
     section.property {
         .content {
-            .preview {
+            .preview, .code_preview {
                 width: calc(100% - 32px);
             }
             .buttons {

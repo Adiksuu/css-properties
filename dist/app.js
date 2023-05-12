@@ -13,6 +13,14 @@ if (route[0] != "") {
         document.title += ` - ${route[0]}`;
     });
 }
+let code_text_p;
+function codeGen(code) {
+    code_text_p = document.querySelector('#code_to_copy');
+    code_text_p.innerHTML = `${prop_name.textContent}: ${code};`;
+}
+function code_to_copy() {
+    navigator.clipboard.writeText(code_text_p.textContent);
+}
 function getIds() {
     id = parseInt(route[1].substr(3));
     prop_name = document.querySelector("#property_name");
@@ -51,6 +59,7 @@ function setStyles() {
         properties[i].addEventListener("click", () => {
             let styleName = sets[id].name;
             prop.style[styleName] = properties[i].textContent;
+            codeGen(properties[i].textContent);
         });
     }
 }

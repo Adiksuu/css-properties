@@ -158,6 +158,47 @@ section.property .content .buttons button:focus {
 section.property .content .buttons button:focus::before {
   background: #159496;
 }
+section.property .content .code_preview {
+  background: #fff;
+  width: 456px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+section.property .content .code_preview::before {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  bottom: -4px;
+  background: #e7e7e7;
+  content: "";
+  border-radius: 0 0 4px 4px;
+}
+section.property .content .code_preview p {
+  font-size: 14px;
+  width: calc(100% - 48px);
+  float: left;
+  color: #0f0f0f;
+  font-weight: 400;
+  padding-left: 16px;
+}
+section.property .content .code_preview span {
+  height: 48px;
+  width: 48px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e3e3e3;
+  cursor: pointer;
+  color: #0f0f0f;
+  border-radius: 0 4px 0 0;
+}
+section.property .content .code_preview span i {
+  font-size: 18px;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -187,7 +228,7 @@ section.property .content .buttons button:focus::before {
   section.home .content .container .info span {
     font-size: 12px;
   }
-  section.property .content .preview {
+  section.property .content .preview, section.property .content .code_preview {
     width: calc(100% - 32px);
   }
   section.property .content .buttons {

@@ -3,6 +3,7 @@ function setStyles() {
         properties[i].addEventListener("click", () => {
           let styleName = sets[id].name
           prop.style[styleName] = properties[i].textContent;
+          codeGen(properties[i].textContent)
         });
       }
 }
