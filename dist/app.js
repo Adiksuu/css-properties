@@ -155,7 +155,7 @@ window.setTimeout(() => {
             btn5: "4px",
         },
         {
-            name: "text-color",
+            name: "color",
             btn1: "#fff",
             btn2: "red",
             btn3: "yellow",
