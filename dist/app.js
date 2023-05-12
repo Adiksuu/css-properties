@@ -210,6 +210,30 @@ window.setTimeout(() => {
             btn4: "3s ease-in",
             btn5: "5s ease",
         },
+        {
+            name: "transform",
+            btn1: "rotate(10deg)",
+            btn2: "rotate(-10deg)",
+            btn3: "rotate(180deg)",
+            btn4: "rotate(-180deg)",
+            btn5: "rotate(0)",
+        },
+        {
+            name: "transform",
+            btn1: "scale(1)",
+            btn2: "scale(.75)",
+            btn3: "scale(1.25)",
+            btn4: "scale(.5)",
+            btn5: "scale(1.5)",
+        },
+        {
+            name: "transform",
+            btn1: "skew(0)",
+            btn2: "skew(15deg)",
+            btn3: "skew(-15deg)",
+            btn4: "skew(15deg, 15deg)",
+            btn5: "skew(-15deg, -15deg)",
+        },
     ];
     if (id >= sets.length) {
         toSite("");
