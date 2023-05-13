@@ -251,4 +251,13 @@ const sets: any = [
       btn5: "space-evenly",
       tooltip: "align-items property allow you to change a y-positioning of element. It's require display: flex"
     },
+    {
+      name: "text-shadow",
+      btn1: "none",
+      btn2: "0px 2px 2px #0f0f0f",
+      btn3: "0px 4px 4px #0f0f0f",
+      btn4: "0px 14px 5px #10A37F",
+      btn5: "0px -14px 5px #10A37F",
+      tooltip: "text-shadow property allow you to add shadow to your text"
+    },
   ];

@@ -18,6 +18,10 @@ function codeGen(code) {
     code_text_p = document.querySelector('#code_to_copy');
     code_text_p.innerHTML = `${prop_name.textContent}: ${code};`;
 }
+function codeExtraGen(code) {
+    code_text_p = document.querySelector('#code_to_copy');
+    code_text_p.innerHTML = `${code};`;
+}
 function code_to_copy() {
     if (code_text_p == undefined)
         return;
@@ -36,6 +40,23 @@ function code_to_copy() {
         }, 20);
     }
 }
+function createElement(text) {
+    const btn = document.createElement('button');
+    btn.innerHTML = text;
+    properties.appendChild(btn);
+    setExtraStyles();
+}
+function loadEvents() {
+    const adder = document.querySelector('.adder');
+    adder.style.display = 'flex';
+    createButton.addEventListener('click', () => {
+        const inputText = createButton.parentElement.children[0];
+        if (inputText.value == '')
+            return;
+        createElement(inputText.value);
+        inputText.value = '';
+    });
+}
 function getIds() {
     id = parseInt(route[1].substr(3));
     prop_name = document.querySelector("#property_name");
@@ -46,18 +67,36 @@ function getIds() {
         return;
     }
 }
+function getExtraIds() {
+    id = route[1].substr(3);
+    prop_name = document.querySelector("#property_name");
+    prop = document.querySelector("#prop");
+    properties = document.querySelector("#properties");
+    createButton = document.querySelector('#createElement');
+}
 let prop_name;
 let properties;
 let prop;
 let id;
+let createButton;
 function loadPage() {
     getIds();
     setProperties();
     setStyles();
     loadTooltip();
 }
+function loadCustom() {
+    getExtraIds();
+    setExtraProperties();
+    loadEvents();
+    loadExtraTooltip();
+}
 window.setTimeout(() => {
     if (!route[1]) {
+        return;
+    }
+    if (route[1].includes('custom')) {
+        loadCustom();
         return;
     }
     loadPage();
@@ -70,12 +109,30 @@ function setProperties() {
     properties[3].innerHTML = sets[id].btn4;
     properties[4].innerHTML = sets[id].btn5;
 }
+function setExtraProperties() {
+    prop_name.innerHTML = `${id}`;
+    for (let i = 0; i < 5; i++) {
+        properties.children[0].remove();
+    }
+}
 function setStyles() {
+    const prop_parent = properties[0].parentElement;
+    prop_parent.style.height = 'auto';
+    prop_parent.style['overflow-y'] = 'unset';
     for (let i = 0; i < properties.length; i++) {
         properties[i].addEventListener("click", () => {
             let styleName = sets[id].name;
             prop.style[styleName] = properties[i].textContent;
             codeGen(properties[i].textContent);
+        });
+    }
+}
+function setExtraStyles() {
+    for (let i = 0; i < properties.children.length; i++) {
+        properties.children[i].addEventListener("click", () => {
+            let styleName = properties.children[i].textContent.split(' ');
+            prop.style[styleName[0].replace(':', '')] = styleName[1];
+            codeExtraGen(properties.children[i].textContent);
         });
     }
 }
@@ -85,6 +142,10 @@ function toSite(site) {
 function loadTooltip() {
     const tooltip = document.querySelector('#tooltip');
     tooltip.innerHTML = sets[id].tooltip;
+}
+function loadExtraTooltip() {
+    const tooltip = document.querySelector('#tooltip');
+    tooltip.innerHTML = "It's a custom mode!";
 }
 const sets = [
     {
@@ -338,6 +399,15 @@ const sets = [
         btn4: "stretch",
         btn5: "space-evenly",
         tooltip: "align-items property allow you to change a y-positioning of element. It's require display: flex"
+    },
+    {
+        name: "text-shadow",
+        btn1: "none",
+        btn2: "0px 2px 2px #0f0f0f",
+        btn3: "0px 4px 4px #0f0f0f",
+        btn4: "0px 14px 5px #10A37F",
+        btn5: "0px -14px 5px #10A37F",
+        tooltip: "text-shadow property allow you to add shadow to your text"
     },
 ];
 //# sourceMappingURL=app.js.map

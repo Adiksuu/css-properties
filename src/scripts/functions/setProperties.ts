@@ -6,3 +6,11 @@ function setProperties() {
     properties[3].innerHTML = sets[id].btn4;
     properties[4].innerHTML = sets[id].btn5;
 }
+function setExtraProperties() {
+    prop_name.innerHTML = `${id}`
+    
+
+    for (let i = 0; i < 5; i++) {
+        properties.children[0].remove()
+    }
+}

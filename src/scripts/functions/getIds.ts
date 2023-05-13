@@ -10,3 +10,12 @@ function getIds() {
         return;
     }
 }
+
+function getExtraIds() {
+    id = route[1].substr(3)
+
+    prop_name = document.querySelector("#property_name");
+    prop = document.querySelector("#prop");
+    properties = document.querySelector("#properties")
+    createButton = document.querySelector('#createElement')
+}
