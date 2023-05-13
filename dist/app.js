@@ -54,6 +54,7 @@ function loadPage() {
     getIds();
     setProperties();
     setStyles();
+    loadTooltip();
 }
 window.setTimeout(() => {
     if (!route[1]) {
@@ -81,6 +82,10 @@ function setStyles() {
 function toSite(site) {
     window.location.search = site;
 }
+function loadTooltip() {
+    const tooltip = document.querySelector('#tooltip');
+    tooltip.innerHTML = sets[id].tooltip;
+}
 const sets = [
     {
         name: "border-radius",
@@ -89,6 +94,7 @@ const sets = [
         btn3: "50%",
         btn4: "25px",
         btn5: "5px 25px",
+        tooltip: "border-radius property allow you to round the corners"
     },
     {
         name: "border",
@@ -97,6 +103,7 @@ const sets = [
         btn3: "4px solid red",
         btn4: "2px solid transparent",
         btn5: "5px dashed #000",
+        tooltip: "border property allow you to add border and his styling in the element"
     },
     {
         name: "outline",
@@ -105,6 +112,7 @@ const sets = [
         btn3: "4px solid red",
         btn4: "2px solid transparent",
         btn5: "5px dashed #000",
+        tooltip: "outline property allow you to add border and his styling simplify to border property but outline adding border outside element"
     },
     {
         name: "box-shadow",
@@ -113,6 +121,7 @@ const sets = [
         btn3: "15px 15px 4px 12px #000",
         btn4: "-15px 0px 14px 5px #10A37F",
         btn5: "0 0px 14px 5px #ffffff65",
+        tooltip: "box-shadow property allow you to add shadow to your element"
     },
     {
         name: "position",
@@ -121,6 +130,7 @@ const sets = [
         btn3: "fixed",
         btn4: "static",
         btn5: "sticky",
+        tooltip: "position property allow you to change positioning the element"
     },
     {
         name: "margin",
@@ -129,6 +139,7 @@ const sets = [
         btn3: "0 16px",
         btn4: "32px 32px",
         btn5: "32px 0",
+        tooltip: "margin property allow you to change the margin of element"
     },
     {
         name: "top",
@@ -137,6 +148,7 @@ const sets = [
         btn3: "-16px",
         btn4: "50%",
         btn5: "-50%",
+        tooltip: "top property allow you to change the top-position of element, it's require the position: relative"
     },
     {
         name: "bottom",
@@ -145,6 +157,7 @@ const sets = [
         btn3: "-16px",
         btn4: "50%",
         btn5: "-50%",
+        tooltip: "bottom property allow you to change the bottom-position of element, it's require the position: relative"
     },
     {
         name: "left",
@@ -153,6 +166,7 @@ const sets = [
         btn3: "-16px",
         btn4: "50%",
         btn5: "-50%",
+        tooltip: "left property allow you to change the left-position of element, it's require the position: relative"
     },
     {
         name: "right",
@@ -161,6 +175,7 @@ const sets = [
         btn3: "-16px",
         btn4: "50%",
         btn5: "-50%",
+        tooltip: "right property allow you to change the right-position of element, it's require the position: relative"
     },
     {
         name: "transform",
@@ -169,6 +184,7 @@ const sets = [
         btn3: "translateX(-16px)",
         btn4: "translateX(50%)",
         btn5: "translateX(-50%)",
+        tooltip: "transform: translateX() property allow you to change the left-to-right position"
     },
     {
         name: "transform",
@@ -177,6 +193,7 @@ const sets = [
         btn3: "translateY(-16px)",
         btn4: "translateY(50%)",
         btn5: "translateY(-50%)",
+        tooltip: "transform: translateY() property allow you to change the top-to-bottom position"
     },
     {
         name: "font-family",
@@ -185,6 +202,7 @@ const sets = [
         btn3: "monospace",
         btn4: "serif",
         btn5: "fantasy",
+        tooltip: "font-family property allow you to change a font of text"
     },
     {
         name: "font-size",
@@ -193,6 +211,7 @@ const sets = [
         btn3: "1rem",
         btn4: ".5rem",
         btn5: "24px",
+        tooltip: "font-size property allow you to change a size of text"
     },
     {
         name: "font-weight",
@@ -201,6 +220,7 @@ const sets = [
         btn3: "600",
         btn4: "700",
         btn5: "800",
+        tooltip: "font-weight property allow you to change a bold of text"
     },
     {
         name: "letter-spacing",
@@ -209,6 +229,7 @@ const sets = [
         btn3: "2px",
         btn4: "3px",
         btn5: "4px",
+        tooltip: "letter-spacing property allow you to change a space between letters of text"
     },
     {
         name: "color",
@@ -217,6 +238,7 @@ const sets = [
         btn3: "yellow",
         btn4: "#10a37f",
         btn5: "#007cae",
+        tooltip: "color property allow you to change a color of text"
     },
     {
         name: "text-decoration",
@@ -225,6 +247,7 @@ const sets = [
         btn3: "line-through",
         btn4: "overline",
         btn5: "unset",
+        tooltip: "text-decoration property allow you to add a decorations to text"
     },
     {
         name: "cursor",
@@ -233,6 +256,7 @@ const sets = [
         btn3: "zoom-in",
         btn4: "crosshair",
         btn5: "grab",
+        tooltip: "cursor property allow you to change a mouse cursor"
     },
     {
         name: "height",
@@ -241,6 +265,7 @@ const sets = [
         btn3: "32px",
         btn4: "50%",
         btn5: "100%",
+        tooltip: "height property allow you to change a height of element"
     },
     {
         name: "width",
@@ -249,6 +274,7 @@ const sets = [
         btn3: "32px",
         btn4: "50%",
         btn5: "100%",
+        tooltip: "width property allow you to change a width of element"
     },
     {
         name: "background",
@@ -257,6 +283,7 @@ const sets = [
         btn3: "skyblue",
         btn4: "pink",
         btn5: "rgba(255, 0, 0)",
+        tooltip: "background property allow you to change a background of element"
     },
     {
         name: "transition",
@@ -265,6 +292,7 @@ const sets = [
         btn3: ".3s ease-in",
         btn4: "3s ease-in",
         btn5: "5s ease",
+        tooltip: "transition property allow you to add a smooth animation of element"
     },
     {
         name: "transform",
@@ -273,6 +301,7 @@ const sets = [
         btn3: "rotate(180deg)",
         btn4: "rotate(-180deg)",
         btn5: "rotate(0)",
+        tooltip: "transform: rotate() property allow you to change a rotation of element"
     },
     {
         name: "transform",
@@ -281,6 +310,7 @@ const sets = [
         btn3: "scale(1.25)",
         btn4: "scale(.5)",
         btn5: "scale(1.5)",
+        tooltip: "transform: scale() property allow you to change a scale of element"
     },
     {
         name: "transform",
@@ -289,6 +319,7 @@ const sets = [
         btn3: "skew(-15deg)",
         btn4: "skew(15deg, 15deg)",
         btn5: "skew(-15deg, -15deg)",
+        tooltip: "transform: skew() property allow you to change a slant of element"
     },
     {
         name: "justify-content",
@@ -297,6 +328,7 @@ const sets = [
         btn3: "flex-end",
         btn4: "stretch",
         btn5: "space-evenly",
+        tooltip: "justify-content property allow you to change a x-positioning of element. It's require display: flex"
     },
     {
         name: "align-items",
@@ -305,6 +337,7 @@ const sets = [
         btn3: "flex-end",
         btn4: "stretch",
         btn5: "space-evenly",
+        tooltip: "align-items property allow you to change a y-positioning of element. It's require display: flex"
     },
 ];
 //# sourceMappingURL=app.js.map

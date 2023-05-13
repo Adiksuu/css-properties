@@ -8,7 +8,7 @@ function loadPage() {
 
   setProperties()
   setStyles()
-  
+  loadTooltip()
 }
 
 window.setTimeout(() => {

@@ -114,6 +114,7 @@ section.property {
             height: 156px;
             padding: 8px;
             display: flex;
+            position: relative;
             #prop {
                 height: 64px;
                 width: 64px;
@@ -126,6 +127,43 @@ section.property {
                 transition: 0.3s linear;
                 &:hover {
                     background: $color-main;
+                }
+            }
+            #help {
+                height: 24px;
+                width: 24px;
+                background: $color-white;
+                border-radius: 100%;
+                position: absolute;
+                top: -12px;
+                right: -12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &:hover span {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+                i {
+                    font-size: 16px;
+                    color: $color-black;
+                }
+                span {
+                    padding: 3px 9px;
+                    width: 156px;
+                    text-align: center;
+                    border-radius: 4px;
+                    background: $color-main;
+                    position: fixed;
+                    top: 100px;
+                    opacity: 0;
+                    color: $color-white;
+                    font-size: 10px;
+                    font-weight: 500;
+                    z-index: 1;
+                    pointer-events: none;
+                    transition: .2s linear;
                 }
             }
         }
@@ -255,6 +293,11 @@ section.property {
             .preview,
             .code_preview {
                 width: calc(100% - 32px);
+                #help {
+                    top: auto;
+                    left: calc(50% - 12px);
+                    bottom: -12px;
+                }
             }
             .buttons {
                 display: flex;

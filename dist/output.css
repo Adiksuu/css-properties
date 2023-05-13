@@ -111,6 +111,7 @@ section.property .content .preview {
   height: 156px;
   padding: 8px;
   display: flex;
+  position: relative;
 }
 section.property .content .preview #prop {
   height: 64px;
@@ -125,6 +126,43 @@ section.property .content .preview #prop {
 }
 section.property .content .preview #prop:hover {
   background: #1dabad;
+}
+section.property .content .preview #help {
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 100%;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+section.property .content .preview #help:hover span {
+  opacity: 1;
+  pointer-events: all;
+}
+section.property .content .preview #help i {
+  font-size: 16px;
+  color: #0f0f0f;
+}
+section.property .content .preview #help span {
+  padding: 3px 9px;
+  width: 156px;
+  text-align: center;
+  border-radius: 4px;
+  background: #1dabad;
+  position: fixed;
+  top: 100px;
+  opacity: 0;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  z-index: 1;
+  pointer-events: none;
+  transition: 0.2s linear;
 }
 section.property .content .buttons {
   width: 456px;
@@ -244,6 +282,12 @@ section.property .content .code_preview span i {
   section.property .content .preview,
   section.property .content .code_preview {
     width: calc(100% - 32px);
+  }
+  section.property .content .preview #help,
+  section.property .content .code_preview #help {
+    top: auto;
+    left: calc(50% - 12px);
+    bottom: -12px;
   }
   section.property .content .buttons {
     display: flex;
