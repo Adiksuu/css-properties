@@ -6,3 +6,8 @@
 
 ### 🔥 YOU CAN COPY GENERATED CODE!
 ![image](https://github.com/Adiksuu/css-properties/assets/75419729/93c9f0fd-14b6-42c0-9c44-7d32a3bd8fc3)
+
+### ❔ CHECK THE INFO ABOUT PROPERTY
+![image](https://github.com/Adiksuu/css-properties/assets/75419729/4989fa77-8bdf-47ce-810e-785eab58aca2)
+
+- Hover the white circle to see the tooltip 
