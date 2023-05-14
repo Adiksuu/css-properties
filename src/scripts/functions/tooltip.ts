@@ -8,3 +8,8 @@ function loadExtraTooltip() {
 
     tooltip.innerHTML = "It's a custom mode!"
 }
+function loadRandomTooltip() {
+    const tooltip: HTMLSpanElement = document.querySelector('#tooltip');
+
+    tooltip.innerHTML = "It's a random mode!"
+}

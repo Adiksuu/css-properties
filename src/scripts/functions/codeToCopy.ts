@@ -1,6 +1,6 @@
 function code_to_copy() {
 
-    if (code_text_p == undefined) return
+    if (code_text_p == undefined || code_text_p.textContent == '') return
 
     const root: any = document.querySelector(":root");
     let width: number = 0;

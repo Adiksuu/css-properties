@@ -18,6 +18,13 @@ function loadCustom() {
   loadEvents()
   loadExtraTooltip()
 }
+function loadRandom() {
+  getRandomIds()
+
+  setRandomProperties()
+  loadRandomEvents()
+  loadRandomTooltip()
+}
 
 window.setTimeout(() => {
   if (!route[1]) {
@@ -25,6 +32,10 @@ window.setTimeout(() => {
   }
   if (route[1].includes('custom')) {
     loadCustom()
+    return;
+  }
+  if (route[1].includes('random')) {
+    loadRandom()
     return;
   }
 

@@ -14,3 +14,11 @@ function setExtraProperties() {
         properties.children[0].remove()
     }
 }
+function setRandomProperties() {
+    prop_name.innerHTML = `${id}`
+    for (let i = 0; i < 3; i++) {
+        properties.children[0].remove()
+    }
+    properties.children[0].textContent = 'RANDOM'
+    properties.children[1].textContent = 'RESET STYLES'
+}

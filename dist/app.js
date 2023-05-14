@@ -23,7 +23,7 @@ function codeExtraGen(code) {
     code_text_p.innerHTML = `${code};`;
 }
 function code_to_copy() {
-    if (code_text_p == undefined)
+    if (code_text_p == undefined || code_text_p.textContent == '')
         return;
     const root = document.querySelector(":root");
     let width = 0;
@@ -46,17 +46,6 @@ function createElement(text) {
     properties.appendChild(btn);
     setExtraStyles();
 }
-function loadEvents() {
-    const adder = document.querySelector('.adder');
-    adder.style.display = 'flex';
-    createButton.addEventListener('click', () => {
-        const inputText = createButton.parentElement.children[0];
-        if (inputText.value == '')
-            return;
-        createElement(inputText.value);
-        inputText.value = '';
-    });
-}
 function getIds() {
     id = parseInt(route[1].substr(3));
     prop_name = document.querySelector("#property_name");
@@ -73,6 +62,54 @@ function getExtraIds() {
     prop = document.querySelector("#prop");
     properties = document.querySelector("#properties");
     createButton = document.querySelector('#createElement');
+}
+function getRandomIds() {
+    id = route[1].substr(3);
+    prop_name = document.querySelector("#property_name");
+    prop = document.querySelector("#prop");
+    properties = document.querySelector("#properties");
+}
+function loadEvents() {
+    const adder = document.querySelector('.adder');
+    adder.style.display = 'flex';
+    createButton.addEventListener('click', () => {
+        const inputText = createButton.parentElement.children[0];
+        if (inputText.value == '')
+            return;
+        createElement(inputText.value);
+        inputText.value = '';
+    });
+}
+function loadRandomEvents() {
+    properties.children[0].addEventListener('click', () => {
+        const randomStyle = Math.floor(Math.random() * sets.length);
+        const styles = sets[randomStyle];
+        const styleNumber = Math.floor(Math.random() * 5);
+        let style;
+        if (styleNumber == 0) {
+            style = styles.btn1;
+        }
+        else if (styleNumber == 1) {
+            style = styles.btn2;
+        }
+        else if (styleNumber == 2) {
+            style = styles.btn3;
+        }
+        else if (styleNumber == 3) {
+            style = styles.btn4;
+        }
+        else if (styleNumber == 4) {
+            style = styles.btn5;
+        }
+        prop.style[styles.name] = style;
+        codeExtraGen(`${styles.name}: ${style}`);
+    });
+    properties.children[1].addEventListener('click', () => {
+        prop.setAttribute('style', '');
+        if (code_text_p == undefined)
+            return;
+        code_text_p.textContent = '';
+    });
 }
 let prop_name;
 let properties;
@@ -91,12 +128,22 @@ function loadCustom() {
     loadEvents();
     loadExtraTooltip();
 }
+function loadRandom() {
+    getRandomIds();
+    setRandomProperties();
+    loadRandomEvents();
+    loadRandomTooltip();
+}
 window.setTimeout(() => {
     if (!route[1]) {
         return;
     }
     if (route[1].includes('custom')) {
         loadCustom();
+        return;
+    }
+    if (route[1].includes('random')) {
+        loadRandom();
         return;
     }
     loadPage();
@@ -114,6 +161,14 @@ function setExtraProperties() {
     for (let i = 0; i < 5; i++) {
         properties.children[0].remove();
     }
+}
+function setRandomProperties() {
+    prop_name.innerHTML = `${id}`;
+    for (let i = 0; i < 3; i++) {
+        properties.children[0].remove();
+    }
+    properties.children[0].textContent = 'RANDOM';
+    properties.children[1].textContent = 'RESET STYLES';
 }
 function setStyles() {
     const prop_parent = properties[0].parentElement;
@@ -146,6 +201,10 @@ function loadTooltip() {
 function loadExtraTooltip() {
     const tooltip = document.querySelector('#tooltip');
     tooltip.innerHTML = "It's a custom mode!";
+}
+function loadRandomTooltip() {
+    const tooltip = document.querySelector('#tooltip');
+    tooltip.innerHTML = "It's a random mode!";
 }
 const sets = [
     {
